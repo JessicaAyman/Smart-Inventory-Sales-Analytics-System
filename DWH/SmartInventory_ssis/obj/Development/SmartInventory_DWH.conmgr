@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DESKTOP-IEHRSES_MSSQLSERVER01.SmartInventory_DWH"
+  DTS:DTSID="{EE536226-F22B-40B4-AC98-2131BBB25329}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=DESKTOP-IEHRSES\MSSQLSERVER01;Initial Catalog=SmartInventory_DWH;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-SmartInventory_ssis-{EE536226-F22B-40B4-AC98-2131BBB25329}DESKTOP-IEHRSES\MSSQLSERVER01.SmartInventory_DWH;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
