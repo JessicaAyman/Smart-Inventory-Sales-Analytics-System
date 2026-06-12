@@ -7,6 +7,6 @@
     <DTS:ConnectionManager
       DTS:ConnectRetryCount="1"
       DTS:ConnectRetryInterval="5"
-      DTS:ConnectionString="Data Source=DESKTOP-IEHRSES\MSSQLSERVER01;Initial Catalog=SmartInventory;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-SmartInventory_ssis-{7506A8C7-DF13-437C-9C1F-B6A0D3755F77}DESKTOP-IEHRSES\MSSQLSERVER01.SmartInventory;Auto Translate=False;" />
+      DTS:ConnectionString="Data Source=DESKTOP-MAU4SA1;Initial Catalog=SmartInventory;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SmartInventory_ssis-{7506A8C7-DF13-437C-9C1F-B6A0D3755F77}DESKTOP-IEHRSES\MSSQLSERVER01.SmartInventory;" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>

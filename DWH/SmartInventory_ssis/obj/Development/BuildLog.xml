@@ -2,63 +2,73 @@
 <BuildLog xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ProjectInfo>
     <Name>SmartInventory_ssis</Name>
-    <LastWriteTime>2026-06-08T05:50:58.8599119Z</LastWriteTime>
+    <LastWriteTime>2026-06-11T18:36:39.6775529Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
-      <Name>Dim_City_Package.dtsx</Name>
-      <LastWriteTime>2026-06-08T03:15:34.6716505Z</LastWriteTime>
-      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
-    </ProjectBuildItemInfo>
-    <ProjectBuildItemInfo>
       <Name>Dim_Product_Package.dtsx</Name>
-      <LastWriteTime>2026-06-08T03:33:48.8971011Z</LastWriteTime>
+      <LastWriteTime>2026-06-11T14:19:18.9987548Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim_Customer_Package.dtsx</Name>
-      <LastWriteTime>2026-06-08T03:37:40.2265355Z</LastWriteTime>
+      <LastWriteTime>2026-06-11T14:14:11.2016663Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim_Employee_Package.dtsx</Name>
-      <LastWriteTime>2026-06-08T03:39:03.5001994Z</LastWriteTime>
+      <LastWriteTime>2026-06-11T14:27:26.9962798Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim_Supplier_Package.dtsx</Name>
-      <LastWriteTime>2026-06-08T03:44:32.0209262Z</LastWriteTime>
+      <LastWriteTime>2026-06-11T14:23:47.5717365Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim_PaymentMethod_Package.dtsx</Name>
-      <LastWriteTime>2026-06-08T03:45:12.7083521Z</LastWriteTime>
+      <LastWriteTime>2026-06-11T14:36:13.6394824Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim_TransactionType_Package.dtsx</Name>
-      <LastWriteTime>2026-06-08T03:52:46.577565Z</LastWriteTime>
-      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
-    </ProjectBuildItemInfo>
-    <ProjectBuildItemInfo>
-      <Name>Fact_Orders_Package.dtsx</Name>
-      <LastWriteTime>2026-06-08T04:12:54.1798849Z</LastWriteTime>
+      <LastWriteTime>2026-06-11T14:49:17.6823358Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Fact_Transactions.dtsx</Name>
-      <LastWriteTime>2026-06-08T05:50:58.8342469Z</LastWriteTime>
+      <LastWriteTime>2026-06-12T14:10:57.3428795Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Fact_InventoryMovements_Package.dtsx</Name>
-      <LastWriteTime>2026-06-08T05:02:46.0860979Z</LastWriteTime>
+      <LastWriteTime>2026-06-12T14:31:58.0487705Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Fact_Inventory_Package.dtsx</Name>
-      <LastWriteTime>2026-06-08T05:12:32.7357502Z</LastWriteTime>
+      <LastWriteTime>2026-06-12T14:42:39.1499979Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Dim_Location_Package.dtsx</Name>
+      <LastWriteTime>2026-06-11T14:36:13.6844826Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Dim_DeliveryMethod_Package.dtsx</Name>
+      <LastWriteTime>2026-06-11T14:45:57.1870113Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Fact_Sales_Package.dtsx</Name>
+      <LastWriteTime>2026-06-11T15:08:32.6726529Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Fact_Purchase_Package.dtsx</Name>
+      <LastWriteTime>2026-06-11T18:48:13.5931494Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

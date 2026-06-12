@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{1CA956CE-91EC-46E6-B5EB-EFEA38407F81}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{46372EA0-C790-44F1-A854-7545FA7BB435}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -90,8 +90,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{EE536226-F22B-40B4-AC98-2131BBB25329}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-IEHRSES_MSSQLSERVER01.SmartInventory_DWH]"
+                  connectionManagerID="{388DD8E1-5B32-41B5-AAE7-4E77A2BD8739}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-MAU4SA1.Smart_InventoryDWH]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -207,8 +207,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="{7506A8C7-DF13-437C-9C1F-B6A0D3755F77}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-IEHRSES_MSSQLSERVER01.SmartInventory]"
+                  connectionManagerID="{539B92E1-3837-470F-B6ED-600825803251}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-MAU4SA1.SmartInventory]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -307,7 +307,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{EE536226-F22B-40B4-AC98-2131BBB25329}"
+          SQLTask:Connection="{388DD8E1-5B32-41B5-AAE7-4E77A2BD8739}"
           SQLTask:SqlStatementSource="BEGIN TRY&#xA;    TRUNCATE TABLE Dim_PaymentMethod;&#xA;END TRY&#xA;BEGIN CATCH&#xA;    -- لو الجدول لسه مامتكريتش، عدي الخطوة دي بسلام&#xA;END CATCH" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -335,13 +335,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\Execute SQL Task"
-          TopLeft="188.571428972848,68.8235293514382" />
-        <NodeLayout
-          Size="150.4,41.6"
+          Size="150,42"
           Id="Package\Data Flow Task"
           TopLeft="252.142857679603,180.470588077105" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="188.571428972848,68.8235293514382" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="269.771428972848,110.423529351438">
@@ -385,11 +385,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="149.6,41.6"
+          Size="150,42"
           Id="Package\Data Flow Task\OLE DB Source"
           TopLeft="80.7142858861053,131.529411649415" />
         <NodeLayout
-          Size="170.4,41.6"
+          Size="170,42"
           Id="Package\Data Flow Task\OLE DB Destination"
           TopLeft="179.285714667367,233.235293913207" />
         <EdgeLayout
@@ -430,14 +430,6 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\OLE DB Destination">
     <Properties>
       <Property>
@@ -447,6 +439,14 @@
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

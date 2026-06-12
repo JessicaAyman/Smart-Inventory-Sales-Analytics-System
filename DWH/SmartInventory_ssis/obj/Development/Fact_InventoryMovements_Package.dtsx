@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{ADB5A40D-9A5E-4B50-ADAC-DD16E063832A}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{B7E9BA33-123E-48DC-A4A9-2935C5D422E7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -90,8 +90,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{EE536226-F22B-40B4-AC98-2131BBB25329}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-IEHRSES_MSSQLSERVER01.SmartInventory_DWH]"
+                  connectionManagerID="{388DD8E1-5B32-41B5-AAE7-4E77A2BD8739}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-MAU4SA1.Smart_InventoryDWH]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -128,13 +128,6 @@
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Supplier_ID]"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Supplier_ID]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Transaction_Type_Name]"
-                      cachedDataType="wstr"
-                      cachedLength="100"
-                      cachedName="Transaction_Type_Name"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Transaction_Type_Name]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Transaction_Type_Name]" />
-                    <inputColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Transaction_Date]"
                       cachedDataType="dbTimeStamp"
                       cachedName="Transaction_Date"
@@ -160,6 +153,24 @@
                       cachedName="Absolute_Quantity"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Absolute_Quantity]"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Absolute_Quantity]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[InvoiceID ]"
+                      cachedDataType="i4"
+                      cachedName="InvoiceID "
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[InvoiceID ]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[InvoiceID ]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PurchaseOrderID ]"
+                      cachedDataType="i4"
+                      cachedName="PurchaseOrderID "
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PurchaseOrderID ]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PurchaseOrderID ]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TransactionTypeID]"
+                      cachedDataType="i4"
+                      cachedName="TransactionTypeID"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TransactionTypeID]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[TransactionTypeID]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -180,11 +191,6 @@
                       dataType="i4"
                       name="Supplier_ID" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Transaction_Type_Name]"
-                      dataType="wstr"
-                      length="100"
-                      name="Transaction_Type_Name" />
-                    <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Transaction_Date]"
                       dataType="dbTimeStamp"
                       name="Transaction_Date" />
@@ -202,6 +208,18 @@
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Absolute_Quantity]"
                       dataType="i4"
                       name="Absolute_Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[InvoiceID ]"
+                      dataType="i4"
+                      name="InvoiceID " />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PurchaseOrderID ]"
+                      dataType="i4"
+                      name="PurchaseOrderID " />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TransactionTypeID]"
+                      dataType="i4"
+                      name="TransactionTypeID" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -260,7 +278,9 @@
     st.ProductID       AS [Product_ID],
     st.CustomerID      AS [Customer_ID],
     st.SupplierID      AS [Supplier_ID],
-    tt.TransactionTypeName AS [Transaction_Type_Name], -- دمج الاسم الصريح للحركة
+    st.InvoiceID      AS [InvoiceID ],
+    st.PurchaseOrderID AS [PurchaseOrderID ],
+    st.TransactionTypeID AS [TransactionTypeID],
     st.TransactionDate AS [Transaction_Date],
     st.Quantity        AS [Quantity],
     
@@ -271,8 +291,7 @@
     END AS [Movement_Direction],
     
     ABS(st.Quantity) AS [Absolute_Quantity] -- تحويل السالب لموجب للسهولة
-FROM InventoryTransactions st
-LEFT JOIN TransactionTypes tt ON st.TransactionTypeID = tt.TransactionTypeID</property>
+FROM InventoryTransactions st</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -298,8 +317,8 @@ LEFT JOIN TransactionTypes tt ON st.TransactionTypeID = tt.TransactionTypeID</pr
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="{7506A8C7-DF13-437C-9C1F-B6A0D3755F77}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-IEHRSES_MSSQLSERVER01.SmartInventory]"
+                  connectionManagerID="{539B92E1-3837-470F-B6ED-600825803251}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-MAU4SA1.SmartInventory]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -345,16 +364,6 @@ LEFT JOIN TransactionTypes tt ON st.TransactionTypeID = tt.TransactionTypeID</pr
                       name="Supplier_ID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Transaction_Type_Name]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Transaction_Type_Name]"
-                      length="100"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Transaction_Type_Name]"
-                      name="Transaction_Type_Name"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Transaction_Date]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Conversion"
@@ -392,6 +401,33 @@ LEFT JOIN TransactionTypes tt ON st.TransactionTypeID = tt.TransactionTypeID</pr
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Absolute_Quantity]"
                       name="Absolute_Quantity"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[InvoiceID ]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[InvoiceID ]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[InvoiceID ]"
+                      name="InvoiceID "
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PurchaseOrderID ]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PurchaseOrderID ]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PurchaseOrderID ]"
+                      name="PurchaseOrderID "
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[TransactionTypeID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TransactionTypeID]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[TransactionTypeID]"
+                      name="TransactionTypeID"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -412,11 +448,6 @@ LEFT JOIN TransactionTypes tt ON st.TransactionTypeID = tt.TransactionTypeID</pr
                       dataType="i4"
                       name="Supplier_ID" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Transaction_Type_Name]"
-                      dataType="wstr"
-                      length="100"
-                      name="Transaction_Type_Name" />
-                    <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Transaction_Date]"
                       dataType="dbTimeStamp"
                       name="Transaction_Date" />
@@ -434,6 +465,18 @@ LEFT JOIN TransactionTypes tt ON st.TransactionTypeID = tt.TransactionTypeID</pr
                       refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Absolute_Quantity]"
                       dataType="i4"
                       name="Absolute_Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[InvoiceID ]"
+                      dataType="i4"
+                      name="InvoiceID " />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PurchaseOrderID ]"
+                      dataType="i4"
+                      name="PurchaseOrderID " />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TransactionTypeID]"
+                      dataType="i4"
+                      name="TransactionTypeID" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -462,11 +505,20 @@ LEFT JOIN TransactionTypes tt ON st.TransactionTypeID = tt.TransactionTypeID</pr
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Supplier_ID]"
                       name="Supplier_ID" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Transaction_Type_Name]"
-                      dataType="wstr"
-                      length="100"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Transaction_Type_Name]"
-                      name="Transaction_Type_Name" />
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[InvoiceID ]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[InvoiceID ]"
+                      name="InvoiceID " />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PurchaseOrderID ]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PurchaseOrderID ]"
+                      name="PurchaseOrderID " />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TransactionTypeID]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TransactionTypeID]"
+                      name="TransactionTypeID" />
                     <outputColumn
                       refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Transaction_Date]"
                       dataType="dbTimeStamp"
@@ -530,8 +582,8 @@ LEFT JOIN TransactionTypes tt ON st.TransactionTypeID = tt.TransactionTypeID</pr
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{EE536226-F22B-40B4-AC98-2131BBB25329}"
-          SQLTask:SqlStatementSource="BEGIN TRY&#xA;    TRUNCATE TABLE Fact_InventoryMovements;&#xA;END TRY&#xA;BEGIN CATCH&#xA;    -- لو الجدول لسه مامتكريتش، عدي الخطوة دي بسلام&#xA;END CATCH" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{388DD8E1-5B32-41B5-AAE7-4E77A2BD8739}"
+          SQLTask:SqlStatementSource="BEGIN TRY&#xA;    TRUNCATE TABLE Fact_InventoryMovements ;&#xA;END TRY&#xA;BEGIN CATCH&#xA;    -- لو الجدول لسه مامتكريتش، عدي الخطوة دي بسلام&#xA;END CATCH" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -558,13 +610,13 @@ LEFT JOIN TransactionTypes tt ON st.TransactionTypeID = tt.TransactionTypeID</pr
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\Execute SQL Task"
-          TopLeft="275.000000585403,90.999999920235" />
-        <NodeLayout
-          Size="150.4,41.6"
+          Size="150,42"
           Id="Package\Data Flow Task"
           TopLeft="263.571429132503,196.52941159244" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="275.000000585403,90.999999920235" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="356.200000585403,132.599999920235">
@@ -608,39 +660,39 @@ LEFT JOIN TransactionTypes tt ON st.TransactionTypeID = tt.TransactionTypeID</pr
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="149.6,41.6"
+          Size="150,42"
           Id="Package\Data Flow Task\OLE DB Source"
           TopLeft="212.85714331026,139.176470466242" />
         <NodeLayout
-          Size="170.4,41.6"
+          Size="171,42"
           Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="252.142857679603,250.823529191908" />
+          TopLeft="293,241" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="287.65714331026,180.776470466242">
+          TopLeft="287.85714331026,181.176470466242">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="49.6857143693433,70.0470587256665"
+              EndConnector="90.64285668974,59.823529533758"
               Start="0,0"
-              End="49.6857143693433,62.5470587256665">
+              End="90.64285668974,52.323529533758">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.0235293628332" />
+                    End="0,25.911764766879" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.0235293628332"
-                    Point2="0,35.0235293628332"
-                    Point3="4,35.0235293628332" />
+                    Point1="0,25.911764766879"
+                    Point2="0,29.911764766879"
+                    Point3="4,29.911764766879" />
                   <mssgle:LineSegment
-                    End="45.6857143693433,35.0235293628332" />
+                    End="86.64285668974,29.911764766879" />
                   <mssgle:CubicBezierSegment
-                    Point1="45.6857143693433,35.0235293628332"
-                    Point2="49.6857143693433,35.0235293628332"
-                    Point3="49.6857143693433,39.0235293628332" />
+                    Point1="86.64285668974,29.911764766879"
+                    Point2="90.64285668974,29.911764766879"
+                    Point3="90.64285668974,33.911764766879" />
                   <mssgle:LineSegment
-                    End="49.6857143693433,62.5470587256665" />
+                    End="90.64285668974,52.323529533758" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
