@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Dim_Employee"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{E17E8C2A-5BB6-4899-B157-207E1FDA358D}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{4EE817AC-B334-41A7-B624-4277D635C3C6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />

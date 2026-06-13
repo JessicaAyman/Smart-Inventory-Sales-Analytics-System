@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{38BCFD9F-25A9-452F-8A1F-7406BC62A0EB}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{E7061347-139A-4279-AB8F-CA367534F9A2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -47,7 +47,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[Fact_Inventory]</property>
+                  name="OpenRowset">[dbo].[Fact_Inventory]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."

@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Dim_Location_Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="14"
-  DTS:VersionGUID="{E7FE5C79-4CBD-4A95-A7FD-F3FC1E92FD8F}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{31480550-2A21-4108-B2E6-6C0403651EDC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -480,13 +480,13 @@ INNER JOIN Countries co ON sp.CountryID = co.CountryID</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150,42"
-          Id="Package\Data Flow Task\OLE DB Source"
-          TopLeft="333.999995023012,174.999997392297" />
-        <NodeLayout
           Size="170,42"
           Id="Package\Data Flow Task\OLE DB Destination"
           TopLeft="364.999994561076,307.999995410442" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Data Flow Task\OLE DB Source"
+          TopLeft="333.999995023012,174.999997392297" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
           TopLeft="408.799995023012,216.599997392297">
