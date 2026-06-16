@@ -1,0 +1,166 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>SmartInventory_Cubes</Database>
+    <Server>localhost\MSSQLSERVER01</Server>
+    <ConnectionString>Data Source=localhost\MSSQLSERVER01;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>H8Hgy+COoTWoe6Azkze4jzVQNoI=6/15/2026 4:36:04 AM6/15/2026 4:36:03 AM</TimeStamp>
+        <ID>
+          <String>SmartInventory_DWH</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>CRtrrt0S5fTgzCdJ066VQT4WI98=6/15/2026 8:45:12 PM6/15/2026 4:36:51 AM</TimeStamp>
+        <ID>
+          <String>Sales_dsv</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>uUKKul/xH0M5/Rei/batGjY69ow=6/15/2026 8:50:09 PM6/15/2026 5:24:49 AM</TimeStamp>
+        <ID>
+          <String>Purchase_dsv</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>ZgUJWnVSdO1eGq7JnpG6FUttakw=6/15/2026 8:51:45 PM6/15/2026 6:15:38 AM</TimeStamp>
+        <ID>
+          <String>Inventory_dsv</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>PHZOJTU4NjUAqT1iztqpWIqy1mc=6/15/2026 8:52:16 PM6/15/2026 6:52:07 AM</TimeStamp>
+        <ID>
+          <String>Financial_dsv</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>2OBPqGaRloafCq4y0DSC+lQ7i/o=6/15/2026 4:37:42 AM6/15/2026 4:37:18 AM</TimeStamp>
+        <ID>
+          <String>Dim Employee</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>BL1XEmJlge51A4olDbBUKim3YWk=6/15/2026 4:37:55 AM6/15/2026 4:37:18 AM</TimeStamp>
+        <ID>
+          <String>Dim Delivery Method</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>2BkF1tuBeQaOO2FCJnI6ibAwJ2I=6/15/2026 4:38:20 AM6/15/2026 4:37:18 AM</TimeStamp>
+        <ID>
+          <String>Dim Product</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>iEGrueugYT4jsovKtnwj3Am70bY=6/15/2026 4:38:47 AM6/15/2026 4:37:18 AM</TimeStamp>
+        <ID>
+          <String>Dim Customer</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>TpjYhdFg9kpmdQD7RyCya/YdBEU=6/15/2026 4:39:21 AM6/15/2026 4:37:18 AM</TimeStamp>
+        <ID>
+          <String>Dim Date</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>S7I8cSnN00K85y9HPpxBqQwDd4U=6/15/2026 5:29:01 AM6/15/2026 5:25:17 AM</TimeStamp>
+        <ID>
+          <String>Dim Supplier</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>ecK6u5S1+QKehpgDKCPIj6wAG5Y=6/15/2026 6:49:00 AM6/15/2026 6:49:00 AM</TimeStamp>
+        <ID>
+          <String>Dim Payment Method</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>jEmas9odceFX/e7vJOlWD6lPr68=6/15/2026 6:54:38 AM6/15/2026 6:49:00 AM</TimeStamp>
+        <ID>
+          <String>Dim Transaction Type</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>Ti6FrECflh33M/jKGIoUPEGVpb0=6/15/2026 7:08:52 PM6/15/2026 6:49:00 AM</TimeStamp>
+        <ID>
+          <String>Fact Financial Transactions</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>0p37IctZh5cjnOdf7hepAJq+jGc=6/15/2026 8:45:44 PM6/15/2026 8:45:12 PM</TimeStamp>
+        <ID>
+          <String>Dim Location</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>DOKrwfYviZWrcs0dKDDSjC6n8uU=6/15/2026 8:48:11 PM6/15/2026 4:37:17 AMgDziBSuptCqHyrw2La6l3x6hLDM=6/15/2026 5:30:02 AM6/15/2026 4:37:17 AM</TimeStamp>
+        <ID>
+          <String>Sales_cubes</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>U6FitWdYCgq8L6HHFyqmCFZlHmg=6/15/2026 8:50:09 PM6/15/2026 5:25:17 AMzqxt7PIgHCxjXh09wujaxLbDKxc=6/15/2026 5:58:04 AM6/15/2026 5:25:17 AM</TimeStamp>
+        <ID>
+          <String>Purchase_cube</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>kQyRh/0wOFYK6xyk2tA5OipTnfQ=6/15/2026 8:28:24 PM6/15/2026 6:20:01 AMCM29L+e9i64teKNACjn1ronJcn8=6/15/2026 6:20:02 AM6/15/2026 6:20:01 AM</TimeStamp>
+        <ID>
+          <String>Inventory_cube</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>Y8/LPOlfEZaVmdSf8EiFR3/L7Wc=6/15/2026 8:56:28 PM6/15/2026 6:52:34 AMO6I7oNCZsbS3mkY81APl8PTRMz0=6/15/2026 6:52:35 AM6/15/2026 6:52:34 AM</TimeStamp>
+        <ID>
+          <String>Financial_cube</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>RJ9QVKhkrwT+9j+Qad8Glu0C1mk=6/15/2026 4:35:15 AM6/15/2026 4:35:15 AM</TimeStamp>
+      <ID>
+        <String>SmartInventory_Cubes</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2026-06-15T17:56:32.413333Z</LastDeployed>
+</DeploymentSnapshot>
